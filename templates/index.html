@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Description</title>
+    <style>
+        #loading {
+            font-size: 20px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Job Description</h1>
+
+    <form action="/" method="post">
+        <label for="job_description">Job Description:</label><br>
+        <textarea id="job_description" name="job_description" rows="10" cols="50"></textarea><br><br>
+
+        <label for="limit">Limit (Number of top resumes):</label><br>
+        <input type="number" id="limit" name="limit" min="1" required><br><br>
+
+        <input type="submit" value="Find Resumes">
+    </form>
+
+    {% if loading %}
+        <div id="loading">Processing resumes, please wait...</div>
+    {% endif %}
+</body>
+</html>

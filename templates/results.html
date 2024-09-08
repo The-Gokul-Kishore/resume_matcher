@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Matching Results</title>
+</head>
+<body>
+    <h1>Matching Resumes</h1>
+
+    <table border="1">
+        <tr>
+            <th>Application No.</th>
+            <th>Resume Link</th>
+            <th>Match Percentage</th>
+        </tr>
+        {% for resume in resumes %}
+        <tr>
+            <td>{{ resume.application_no }}</td>
+            <td><a href="{{ resume.resume_link }}">View Resume</a></td>
+            <td>{{ resume.match_percentage }}%</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Go Back</a>
+</body>
+</html>
